@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ Console Module """
+import os
 import cmd
 import sys
 from models.base_model import BaseModel
@@ -11,6 +12,12 @@ from models.city import City
 from models.amenity import Amenity
 from models.review import Review
 
+os.environ['HBNB_ENV'] = 'dev' # dev / test / production
+os.environ['HBNB_MYSQL_USER'] = 'root' # user name
+os.environ['HBNB_MYSQL_PWD'] = 'root' # password
+os.environ['HBNB_MYSQL_HOST'] = 'localhost' # host: localhost / distant...
+os.environ['HBNB_MYSQL_DB'] = 'hbnb_dev_db' # database name
+os.environ['HBNB_TYPE_STORAGE'] = 'db' # db / file
 
 class HBNBCommand(cmd.Cmd):
     """ Contains the functionality for the HBNB console"""
@@ -113,7 +120,7 @@ class HBNBCommand(cmd.Cmd):
         """ Overrides the emptyline method of CMD """
         pass
 
-    def do_create(self, args):
+    def do_create(self, args, **kwargs):
         """ Create an object of any class"""
         if not args:
             print("** class name missing **")
@@ -121,6 +128,7 @@ class HBNBCommand(cmd.Cmd):
         elif args not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
+        if not 
         new_instance = HBNBCommand.classes[args]()
         storage.save()
         print(new_instance.id)
