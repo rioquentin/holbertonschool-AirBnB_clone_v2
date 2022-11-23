@@ -13,8 +13,9 @@ class FileStorage:
         if cls:
             obj = {} # (on cree un dict vide pour la suite)
             for key, value in self.__objects.items(): # (on cherche a tout parcourir)
-                if type(value).__name__ == cls: # ( si le type de la variable et egal au nom de class rechercher c'est bon)
+                if type(value).__name__ == cls.__name__: # ( si le type de la variable et egal au nom de class rechercher c'est bon)
                     obj[key] = value
+
             return obj # (return a dict , pas le dict de .__objects)
         else:
             return self.__objects
