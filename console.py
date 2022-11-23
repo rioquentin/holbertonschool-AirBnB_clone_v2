@@ -133,8 +133,8 @@ class HBNBCommand(cmd.Cmd):
         if len(args_splited) > 1:
             pdict = {}
             for elem in args_splited[1:]:
-                element = elem.split("=")
-                pdict[element[0]] = element[1].replace("\"", "").replace("_", " ") #ca serait bien de faire un dico sans boucle
+                kv = elem.split("=")
+                pdict[kv[0]] = kv[1].replace("\"", "").replace("_", " ") #ca serait bien de faire un dico sans boucle
                 # là j'ai un dico pdict (clé: valeurs) avec tout les parametres
             for k, v in pdict.items():
                 setattr(new_instance, k, v)
