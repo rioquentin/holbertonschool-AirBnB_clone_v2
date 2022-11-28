@@ -29,7 +29,7 @@ text variable
 def C(text=None):
     """def"""
     new = text.replace("_", " ")
-    return f"C {new}"
+    return "C {}".format(new)
 
 
 if __name__ == '__main__':
