@@ -10,12 +10,14 @@ app = Flask(__name__)
 """Base route"""
 @app.route("/", strict_slashes=False)
 def hello_world():
+    """doc"""
     return "Hello HBNB!"
 
 
 """Route for /hbnb"""
 @app.route("/hbnb", strict_slashes=False)
 def hello():
+    """doc"""
     return "HBNB"
 
 
@@ -25,6 +27,7 @@ text variable
 """
 @app.route("/c/<text>", strict_slashes=False)
 def C(text=None):
+    """def"""
     new = text.replace("_", " ")
     return f"C {new}"
 
