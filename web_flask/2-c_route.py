@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """Flask Web app starter"""
 
 
@@ -25,7 +26,7 @@ text variable
 """
 
 @app.route("/c/<text>", strict_slashes=False)
-def C(text):
+def C(text=None):
     new = text.replace("_", " ")
     return f"C {escape(new)}"
 
