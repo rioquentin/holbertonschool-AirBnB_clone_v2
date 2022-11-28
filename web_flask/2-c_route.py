@@ -3,7 +3,6 @@
 
 
 from flask import Flask
-from markupsafe import escape
 
 
 app = Flask(__name__)
@@ -27,7 +26,7 @@ text variable
 @app.route("/c/<text>", strict_slashes=False)
 def C(text=None):
     new = text.replace("_", " ")
-    return f"C {escape(new)}"
+    return f"C {new}"
 
 
 if __name__ == '__main__':
