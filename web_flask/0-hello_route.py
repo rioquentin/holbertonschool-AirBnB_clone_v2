@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Flask Web app starter"""
 
 from flask import Flask
 
