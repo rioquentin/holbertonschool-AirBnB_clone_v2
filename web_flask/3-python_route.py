@@ -39,7 +39,7 @@ def C(text=None):
 
 
 """
-Route for /python and display function of /python/<text> 
+Route for /python and display function of /python/<text>
 to print the value of the
 text variable
 """
