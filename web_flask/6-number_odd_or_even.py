@@ -76,7 +76,5 @@ def Odd_Even(n):
         type = "odd"
         return render_template('6-number_odd_or_even.html', n=n, type=type)
 
-
-
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
